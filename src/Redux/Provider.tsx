@@ -1,11 +1,14 @@
 'use client'
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, {ReactNode} from 'react';
 import {Provider} from 'react-redux';
 import store from './Store';
 
+interface Props {
+    children?: ReactNode
+    // any props that come into the component
+}
 
-const ReduxProvider = ({children}) => {
+const ReduxProvider = ({ children }: Props) => {
     return(
         <Provider store={store}>
             {children}

@@ -1,15 +1,18 @@
 'use client'
 import React from 'react';
 import PropTypes from 'prop-types';
+import {Provider} from 'react-redux';
+import store from './Store';
 
-Provider.propTypes = {
-    
+
+const ReduxProvider = ({children}) => {
+    return(
+        <Provider store={store}>
+            {children}
+        </Provider>
+    )
+
+
 };
 
-function Provider(props) {
-    return (
-        <div></div>
-    );
-}
-
-export default Provider;
+export default ReduxProvider;

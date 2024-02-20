@@ -14,8 +14,6 @@ const ReduxProvider = ({ children }: Props) => {
             {children}
         </Provider>
     )
-
-
 };
 
 export default ReduxProvider;

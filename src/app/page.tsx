@@ -3,6 +3,7 @@ import React, {useEffect, useState} from 'react';
 import Image from "next/image";
 import {useDispatch} from "react-redux";
 import {add} from "@/Redux/CartSlice";
+import Cart from "@/Components/Cart";
 
 
 
@@ -14,15 +15,16 @@ interface Product {
 }
 export default function Home() {
     const [products, setProducts] = useState<Product[]>([]);
+    const [isCartOpen, setIsCartOpen] = useState(true);
     const dispatch=useDispatch();
     const handleAdd=(product:Product)=>{
-        dispatch(add(product))
+        dispatch(add(product));
+        setIsCartOpen(true);
     }
     const getProducts=async()=>{
         const res=await fetch('https://fakestoreapi.com/products')
         const data=await res.json()
         setProducts(data)
-
         return data;
     }
     useEffect(() => {
@@ -55,6 +57,7 @@ export default function Home() {
 
 
                </div>
+               <Cart isOpen={isCartOpen} setIsOpen={setIsCartOpen} />
 
 
 

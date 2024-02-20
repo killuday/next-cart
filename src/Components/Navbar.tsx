@@ -20,7 +20,6 @@ function classNames(...classes: any[]) {
 export default function Navbar() {
     const item=useSelector((state:any)=>state.cart)
     return (
-
         <Disclosure as="nav" className="bg-gray-800">
             {({ open }) => (
                 <>

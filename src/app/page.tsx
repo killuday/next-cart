@@ -34,7 +34,7 @@ export default function Home() {
     }, []);
 
     return (
-   <div className={'grid grid-cols-4 gap-4 container mx-auto p-16'}>
+   <div className={'md:grid md:grid-cols-1 md:gap-2 grid grid-cols-4 gap-4 container mx-auto p-16'}>
        {products?.map((product:any)=>(
            <div className={' rounded-xl p-5 [box-shadow:rgba(14,_30,_37,_0.12)_0px_2px_4px_0px,_rgba(14,_30,_37,_0.32)_0px_2px_16px_0px]'} key={product.id}>
                <div className='flex justify-center'>
